@@ -1,4 +1,3 @@
-import java.security.Key;
 
 public class RotatedSortedArray {
     // A binary Search Function To Search the number in the array
@@ -7,9 +6,9 @@ public class RotatedSortedArray {
         int start = 0;//Starting point
         int end = array.length - 1;//ending 
         //iniitiating the binary search
-        while(start <= end) {
-            int mid = (start + end)/2;
 
+        while(start <= end) {
+            int mid = start+((end-start)/2) ;
             if(key == array[mid]) {
                 return mid;
             }
