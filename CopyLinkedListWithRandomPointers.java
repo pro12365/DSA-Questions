@@ -12,12 +12,14 @@ class Node {
 public class CopyLinkedListWithRandomPointers {
     public Node copyRandomList(Node head) {
         Node curr= head;
+        //Linking the Liked Lists
         while(head!=null)
         {
             Node temp= curr.next;
             curr.next= new Node(curr.val);
             curr.next.next= temp;
         }
+        //Setting the Random pointers
         curr=head;
         while(head!=null)
         {
@@ -27,9 +29,11 @@ public class CopyLinkedListWithRandomPointers {
             }
             curr= curr.next.next;
         }
+        //creating Original Node and Duplicate Nodes
         Node orig= head;
         Node copy= head.next;
         Node temp= copy;
+        //Breaking the two lists into seperate Linked list
         while(orig!=null)
         {
             orig.next= orig.next.next;
@@ -39,5 +43,18 @@ public class CopyLinkedListWithRandomPointers {
         }
         return temp;
         
+    }
+    public static void main(String[] args) {
+        Node start= null;
+        start.val=5;
+        Node pot=null;
+        pot.val=11;
+        start.next=pot;
+        Node tot=null;
+        tot.val=7;
+        pot.next=tot;
+        CopyLinkedListWithRandomPointers cp= new CopyLinkedListWithRandomPointers();
+        Node res=cp.copyRandomList(start);
+        System.out.println(res);
     }
 }

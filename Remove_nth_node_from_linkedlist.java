@@ -6,7 +6,6 @@ class ListNode {
     public ListNode(int val) {
         this.val = val;
         this.next = null;
-        this.random = null;
     }
 }
 public class Remove_nth_node_from_linkedlist {
