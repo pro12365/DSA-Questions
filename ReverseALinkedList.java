@@ -16,10 +16,11 @@ public class ReverseALinkedList {
      while(curr!= null)
      {
         ListNode temp= curr.next;
-        curr.next=temp;  
+        curr.next=prev;
+        prev=curr;
+        curr=temp;
      }
     return prev;
-    
  }
     
 }
